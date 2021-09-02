@@ -7,18 +7,18 @@ import org.junit.jupiter.api.Test;
 
 public class DemoQATest {
 
-  @BeforeAll
-  static void beforeAll() {
+   @BeforeAll
+   static void beforeAll() {
         System.out.println("Before all tests! \n");
 
       }
 
-   
    @BeforeEach
 
        void beforeEach () {
            System.out.println("Before test! \n");
        }
+
    @AfterEach
     void afterEach () {
        System.out.println("After test! \n");
