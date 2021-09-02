@@ -23,5 +23,12 @@ public class DemoQATest {
        System.out.println("I love you QA.GURU \n");
 
    }
+   
+       @Test
+    void  secondTest() {
+
+       System.out.println("I love you QA.GURU, second test! \n");
+
+   }
 
 }
