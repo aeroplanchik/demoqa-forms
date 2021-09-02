@@ -12,6 +12,5 @@ public class TextBoxTests {
         open("https://demoqa.com/text-box");
 
 
-
     }
 }
