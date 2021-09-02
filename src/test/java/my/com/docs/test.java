@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.by;
+import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -18,9 +19,9 @@ class Tests {
 
         open("https://demoqa.com/automation-practice-form");
 
-        $("#userName").setValue("Alex");
+        $("#firstName").setValue("Alex");
         $("#userEmail").setValue("alex@qaguru.com");
-        $("#gender-radio-1 .custom-control-label").click();
+        $("label.custom-control-label").shouldHave(text("Male")).click();
 
 
     }
