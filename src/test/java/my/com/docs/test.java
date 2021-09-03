@@ -27,9 +27,18 @@ class Tests {
         $("#userEmail").setValue("alex@qaguru.com");
         $("label.custom-control-label").shouldHave(text("Male")).click();
         $("#userNumber").setValue("89112566558");
-        $("#dateOfBirthInput").setValue("05.05.1985");
+
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOption("January");
+        $(".react-datepicker__year-select").selectOption("2000");
+        // $(".react-datepicker.react-datepicker__month.react-datepicker__week").click();
+        $(".react-datepicker__day--001").click();
+
+        //================================================================================
+        //$(".react-datepicker__month-dropdown-container react-datepicker__month-dropdown-container--select.react-datepicker__month-select").setValue("1").click();
+
         $(".subjects-auto-complete__input #subjectsInput").setValue("1234567890");
-        $("#hobbies-checkbox-1, #hobbies-checkbox-2, #hobbies-checkbox-3").click();
+       // $("label.custom-control-label").shouldHave(text("Music")).click();
        // $("#uploadPicture").click();
        // $("#submit").click();
 
