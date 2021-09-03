@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.by;
 import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 class Tests {
     @BeforeAll
@@ -29,18 +28,18 @@ class Tests {
         $("#userNumber").setValue("89112566558");
 
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("January");
+        $(".react-datepicker__month-select").selectOption("June");
         $(".react-datepicker__year-select").selectOption("2000");
-        //$(".react-datepicker__day react-datepicker__day--014").click();
-        // $(".react-datepicker.react-datepicker__month.react-datepicker__week").click();
+        //$(".react-datepicker__day.react-datepicker__day--014").click();
+        //$(".react-datepicker.react-datepicker__month.react-datepicker__week").click();
+        //$("[aria-label=\"Choose Tuesday, June 28th, 2005\"]").click();
+        // $x("//*[@aria-label=\"Choose Tuesday, June 28th, 2005\"]").click();
+        $x("//*[contains(@aria-label, \"June 28th, 2000\")]").click();
+       // $(".react-datepicker__day--001").click(); этот код тоже выбирает число
 
-        $(".react-datepicker__day--001").click();
 
-        //================================================================================
-        //$(".react-datepicker__month-dropdown-container react-datepicker__month-dropdown-container--select.react-datepicker__month-select").setValue("1").click();
-
-        $(".subjects-auto-complete__input #subjectsInput").setValue("1234567890");
-       // $("label.custom-control-label").shouldHave(text("Music")).click();
+        $(".subjects-auto-complete__input #subjectsInput").setValue("Math").pressEnter();
+        $("label.custom-control-label").shouldHave(text("Music")).click();
        // $("#uploadPicture").click();
        // $("#submit").click();
 
