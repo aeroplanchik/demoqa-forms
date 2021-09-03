@@ -27,8 +27,8 @@ class Tests {
         $("#userEmail").setValue("alex@qaguru.com");
         $("label.custom-control-label").shouldHave(text("Male")).click();
         $("#userNumber").setValue("89112566558");
-        $("#dateOfBirthInput").setValue("05.05.1985").click();
-        $(".subjects-auto-complete__input#subjectsInput").setValue("1234567890");
+        $("#dateOfBirthInput").setValue("05.05.1985");
+        $(".subjects-auto-complete__input #subjectsInput").setValue("1234567890");
         $("#hobbies-checkbox-1, #hobbies-checkbox-2, #hobbies-checkbox-3").click();
        // $("#uploadPicture").click();
        // $("#submit").click();
