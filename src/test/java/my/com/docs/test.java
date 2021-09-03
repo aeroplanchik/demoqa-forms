@@ -31,7 +31,9 @@ class Tests {
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("January");
         $(".react-datepicker__year-select").selectOption("2000");
+        //$(".react-datepicker__day react-datepicker__day--014").click();
         // $(".react-datepicker.react-datepicker__month.react-datepicker__week").click();
+
         $(".react-datepicker__day--001").click();
 
         //================================================================================
