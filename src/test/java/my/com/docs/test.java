@@ -11,7 +11,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 class Tests {
-
+    @BeforeAll
+    static void beforeAll () {
+        Configuration.startMaximized = true;
+    }
 
     @Test
     void fillFormTest() {
@@ -23,10 +26,12 @@ class Tests {
         $("#lastName").setValue("AlexAlex");
         $("#userEmail").setValue("alex@qaguru.com");
         $("label.custom-control-label").shouldHave(text("Male")).click();
-        $("#userNumber").setValue("999999999");
+        $("#userNumber").setValue("89112566558");
         $("#dateOfBirthInput").setValue("05.05.1985").click();
-      //  $("#userNumber").setValue("999999999");
-      //  $("#userNumber").setValue("999999999");
+        $(".subjects-auto-complete__input#subjectsInput").setValue("1234567890");
+        $("#hobbies-checkbox-1, #hobbies-checkbox-2, #hobbies-checkbox-3").click();
+       // $("#uploadPicture").click();
+       // $("#submit").click();
 
     }
 }
