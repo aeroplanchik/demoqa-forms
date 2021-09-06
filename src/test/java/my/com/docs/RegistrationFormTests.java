@@ -23,8 +23,8 @@ public class RegistrationFormTests {
 
         open("/automation-practice-form");
         $("#firstName").setValue("Alex");
-        $("#lastName").setValue("Egorov");
-        $("#userEmail").setValue("alex@egorov.com");
+        $("#lastName").setValue("Aleksey");
+        $("#userEmail").setValue("alex@alex.com");
 //        $("#gender-radio-3").click();
 //        $(byText("Other")).click();
 //        $("#gender-radio-3").parent().click();
@@ -58,23 +58,33 @@ public class RegistrationFormTests {
         $("#stateCity-wrapper").$(byText("Delhi")).click();
 
         $("#submit").click();
-        $("#submit").click();
+        //$("#submit").click();
 
 
-        //  $(".modal-title").shouldHave(text("Thanks for submitting the form"));
-        //  $(".table-responsive").shouldHave(text("Alex Egorov"), text("alex@egorov.com"), text("28 July,2005"));
-        //  $(".table-responsive").$(byText("Student Name")).shouldHave(text("Alex Egorov"));
-        //  $(".table-responsive").$(byText("Email")).shouldHave(text("alex@egorov.com"));
-        //  $x("//td[text()='Student Name']").parent()
+        $(".modal-title").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive").shouldHave(text("Alex Aleksey"), text("alex@alex.com"), text("28 July,2005"));
+        //$(".table-responsive").$(byText("Student Name")).shouldHave(text("Alex Aleksey"));
+        $(".table-responsive").$(byText("Mobile")).shouldHave(text("1231231231"));
+        $(".table-responsive").$(byText("Subject")).shouldHave(text("Math"));
+        $(".table-responsive").$(byText("Hobbies")).shouldHave(text("Reading"));
+        $(".table-responsive").$(byText("Picture")).shouldHave(text("1.jpg"));
+        $(".table-responsive").$(byText("Address")).shouldHave(text("Qa guru street 7"));
+        $(".table-responsive").$(byText("State and City")).shouldHave(text("NCR Delhi"));
+        $(".modal-footer #closeLargeModal").click();
+        //$("#closeLargeModal").scrollIntoView(true).click();
+
+
+        // $x("//td[text()='Student Name']").parent()
+
         //         .shouldHave(text("Alex Egorov"));
-        $x("//td[text()='Student Name'] /following-sibling::td").shouldHave(text("Ilya Bogdanov"));
-        $x("//td[text()='Student Email'] /following-sibling::td").shouldHave(text("Bogdanov@gmail.com"));
-        $x("//td[text()='Gender'] /following-sibling::td").shouldHave(text("Male"));
-        $x("//td[text()='Date of Birth'] /following-sibling::td").shouldHave(text("11 June,1989"));
-        $x("//td[text()='Subjects'] /following-sibling::td").shouldHave(text("English, Chemistry, Arts"));
-        $x("//td[text()='Hobbies'] /following-sibling::td").shouldHave(text("Sports, Reading, Music"));
-        $x("//td[text()='Address'] /following-sibling::td").shouldHave(text("Gorkiy"));
-        $x("//td[text()='State and City'] /following-sibling::td").shouldHave(text("Haryana Panipat"));
+//        $x("//td[text()='Student Name'] /following-sibling::td").shouldHave(text("Alex Alekseev"));
+//        $x("//td[text()='Student Email'] /following-sibling::td").shouldHave(text("alex@alex.com"));
+//        $x("//td[text()='Gender'] /following-sibling::td").shouldHave(text("Male"));
+//        $x("//td[text()='Date of Birth'] /following-sibling::td").shouldHave(text("28 July,2005"));
+//        $x("//td[text()='Subjects'] /following-sibling::td").shouldHave(text("English, Chemistry, Arts"));
+//        $x("//td[text()='Hobbies'] /following-sibling::td").shouldHave(text("Sports, Reading, Music"));
+//        $x("//td[text()='Address'] /following-sibling::td").shouldHave(text("Gorkiy"));
+//        $x("//td[text()='State and City'] /following-sibling::td").shouldHave(text("Haryana Panipat"));
 
         ;
 //        $("#userName").setValue("Alex");
@@ -88,11 +98,11 @@ public class RegistrationFormTests {
 //        $("#output #permanentAddress").shouldHave(text(permanentAddress));
     }
 
-    @Test
-    void emptyFillFormTest() {
-        open("/automation-practice-form");
-        $("#submit").click();
+    //  @Test
+    // void emptyFillFormTest() {
+    //     open("/automation-practice-form");
+    //     $("#submit").click();
 
-        $("#firstName").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
-    }
+    //     $("#firstName").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
+    // }
 }
