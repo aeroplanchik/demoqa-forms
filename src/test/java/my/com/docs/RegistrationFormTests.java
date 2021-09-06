@@ -63,14 +63,17 @@ public class RegistrationFormTests {
 
         $(".modal-title").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text("Alex Aleksey"), text("alex@alex.com"), text("28 July,2005"));
+        $(".table-responsive").shouldHave(text("1231231231"), text("Math"), text("Reading"));
+        $(".table-responsive").shouldHave(text("1.jpg"), text("Qa guru street 7"), text("NCR Delhi"));
+
         //$(".table-responsive").$(byText("Student Name")).shouldHave(text("Alex Aleksey"));
-        $(".table-responsive").$(byText("Mobile")).shouldHave(text("1231231231"));
-        $(".table-responsive").$(byText("Subject")).shouldHave(text("Math"));
-        $(".table-responsive").$(byText("Hobbies")).shouldHave(text("Reading"));
-        $(".table-responsive").$(byText("Picture")).shouldHave(text("1.jpg"));
-        $(".table-responsive").$(byText("Address")).shouldHave(text("Qa guru street 7"));
-        $(".table-responsive").$(byText("State and City")).shouldHave(text("NCR Delhi"));
-        $(".modal-footer #closeLargeModal").click();
+        //$(".table-responsive").$(byText("Mobile")).shouldHave(text("1231231231"));
+        //$(".table-responsive").$(byText("Subject")).shouldHave(text("Math"));
+        // $(".table-responsive").$(byText("Hobbies")).shouldHave(text("Reading"));
+        //$(".table-responsive").$(byText("Picture")).shouldHave(text("1.jpg"));
+        //$(".table-responsive").$(byText("Address")).shouldHave(text("Qa guru street 7"));
+        // $(".table-responsive").$(byText("State and City")).shouldHave(text("NCR Delhi"));
+        $("#closeLargeModal").click();
         //$("#closeLargeModal").scrollIntoView(true).click();
 
 
