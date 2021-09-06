@@ -47,11 +47,10 @@ public class RegistrationFormTests {
 
 //        aria-label="Choose Tuesday, June 28th, 2005"
 //        aria-label="Choose Thursday, July 28th, 2005"
-
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Reading")).click();
-        $("#uploadPicture").uploadFromClasspath("img/1.png");
-//        $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
+        //$("#uploadPicture").uploadFromClasspath("img/1.png");
+        $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.jpg"));
         $("#currentAddress").setValue("Qa guru street 7");
         $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
@@ -70,10 +69,6 @@ public class RegistrationFormTests {
                 .shouldHave(text("Alex Egorov"));
 
 
-
-
-
-
         ;
 //        $("#userName").setValue("Alex");
 //        $("#userEmail").setValue("alex@qaguru.com");
@@ -85,6 +80,7 @@ public class RegistrationFormTests {
 //        $("#output p#currentAddress").shouldHave(text("some street 1"));
 //        $("#output #permanentAddress").shouldHave(text(permanentAddress));
     }
+
     @Test
     void emptyFillFormTest() {
         open("/automation-practice-form");
