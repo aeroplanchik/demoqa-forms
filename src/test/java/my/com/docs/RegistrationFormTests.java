@@ -50,7 +50,7 @@ public class RegistrationFormTests {
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Reading")).click();
         //$("#uploadPicture").uploadFromClasspath("img/1.png");
-        $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.jpg"));
+        $("#uploadPicture").uploadFile(new File("src/test/java/resources/1.jpg"));
         $("#currentAddress").setValue("Qa guru street 7");
         $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
@@ -61,13 +61,20 @@ public class RegistrationFormTests {
         $("#submit").click();
 
 
-        $(".modal-title").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("Alex Egorov"), text("alex@egorov.com"), text("28 July,2005"));
-        $(".table-responsive").$(byText("Student Name")).shouldHave(text("Alex Egorov"));
-        $(".table-responsive").$(byText("Email")).shouldHave(text("alex@egorov.com"));
-        $x("//td[text()='Student Name']").parent()
-                .shouldHave(text("Alex Egorov"));
-
+        //  $(".modal-title").shouldHave(text("Thanks for submitting the form"));
+        //  $(".table-responsive").shouldHave(text("Alex Egorov"), text("alex@egorov.com"), text("28 July,2005"));
+        //  $(".table-responsive").$(byText("Student Name")).shouldHave(text("Alex Egorov"));
+        //  $(".table-responsive").$(byText("Email")).shouldHave(text("alex@egorov.com"));
+        //  $x("//td[text()='Student Name']").parent()
+        //         .shouldHave(text("Alex Egorov"));
+        $x("//td[text()='Student Name'] /following-sibling::td").shouldHave(text("Ilya Bogdanov"));
+        $x("//td[text()='Student Email'] /following-sibling::td").shouldHave(text("Bogdanov@gmail.com"));
+        $x("//td[text()='Gender'] /following-sibling::td").shouldHave(text("Male"));
+        $x("//td[text()='Date of Birth'] /following-sibling::td").shouldHave(text("11 June,1989"));
+        $x("//td[text()='Subjects'] /following-sibling::td").shouldHave(text("English, Chemistry, Arts"));
+        $x("//td[text()='Hobbies'] /following-sibling::td").shouldHave(text("Sports, Reading, Music"));
+        $x("//td[text()='Address'] /following-sibling::td").shouldHave(text("Gorkiy"));
+        $x("//td[text()='State and City'] /following-sibling::td").shouldHave(text("Haryana Panipat"));
 
         ;
 //        $("#userName").setValue("Alex");
