@@ -18,7 +18,7 @@ public class RegistrationFormTests {
     }
 
     @Test
-    void fillFormTest() {
+    void FillFormTest() {
 
         // заполнение полей формы
         open("/automation-practice-form");
